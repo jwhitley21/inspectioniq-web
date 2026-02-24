@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InspectionIQ — Know What You're Buying</title>
+  <meta name="description" content="InspectionIQ analyzes your home inspection report with AI and tells you exactly what it'll cost to fix — before you close." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1E3A8A;
+      --blue:   #3B82F6;
+      --green:  #10B981;
+      --amber:  #F59E0B;
+      --red:    #EF4444;
+      --gray:   #F1F5F9;
+      --text:   #1E293B;
+      --muted:  #64748B;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .logo span { color: var(--blue); }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 96px 24px 80px;
+      background: linear-gradient(160deg, #EFF6FF 0%, #fff 60%);
+    }
+    .badge {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .app-store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .app-store-btn:hover { background: #1e40af; }
+    .app-store-btn svg { width: 22px; height: 22px; fill: #fff; }
+
+    /* HOW IT WORKS */
+    .section {
+      padding: 80px 24px;
+    }
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .section-label {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 56px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+    .step {
+      text-align: center;
+      padding: 32px 24px;
+      background: var(--gray);
+      border-radius: 20px;
+    }
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* FEATURES */
+    .features-bg { background: var(--gray); }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .feature {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      border: 1px solid #E2E8F0;
+    }
+    .feature-icon {
+      font-size: 1.75rem;
+      margin-bottom: 12px;
+    }
+    .feature h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .feature p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 96px 24px;
+      background: linear-gradient(135deg, var(--navy) 0%, #1e40af 100%);
+      color: #fff;
+    }
+    .cta h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .cta p {
+      font-size: 1.05rem;
+      opacity: 0.8;
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .cta .app-store-btn {
+      background: #fff;
+      color: var(--navy);
+    }
+    .cta .app-store-btn:hover { background: #EFF6FF; }
+    .cta .app-store-btn svg { fill: var(--navy); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid #E2E8F0;
+    }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 64px 20px 56px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">Inspection<span>IQ</span></a>
+  </nav>
+
+  <section class="hero">
+    <div class="badge">Now Available on iOS</div>
+    <h1>Know exactly what you're getting into <em>before you close.</em></h1>
+    <p>Upload your home inspection report and get an AI-powered cost breakdown, risk score, and negotiation tips — in minutes.</p>
+    <a class="app-store-btn" href="#">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+      Download on the App Store
+    </a>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">How it works</p>
+      <h2>From inspection report to negotiation strategy</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Upload your PDF</h3>
+          <p>Select your home inspection report directly from your phone. Any standard PDF works.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>AI analyzes the findings</h3>
+          <p>Our AI reads every finding, categorizes issues by severity, and matches them to real repair costs.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Get your action plan</h3>
+          <p>See a risk score, itemized cost estimates adjusted for your region, and ready-to-use negotiation tips.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section features-bg">
+    <div class="section-inner">
+      <p class="section-label">Features</p>
+      <h2>Everything you need at the negotiating table</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+          <h3>Risk Score</h3>
+          <p>An overall risk rating so you can quickly understand how serious the inspection findings are.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💰</div>
+          <h3>Cost Estimates</h3>
+          <p>Repair costs adjusted for your local market — not national averages that don't apply to your area.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⚠️</div>
+          <h3>Top Risks</h3>
+          <p>The most important findings surfaced and explained in plain language, not inspector jargon.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🤝</div>
+          <h3>Negotiation Tips</h3>
+          <p>Specific, actionable asks you can bring to your agent based on what was actually found.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Stop guessing. Start negotiating.</h2>
+    <p>Download InspectionIQ and know exactly what your inspection report means for your wallet.</p>
+    <a class="app-store-btn" href="#">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+      Download on the App Store
+    </a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 HomeServiceDev LLC &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
