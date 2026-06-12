@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample Inspection Report — InspectionIQ</title>
+  <meta name="description" content="Download a sample home inspection report PDF to try InspectionIQ." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1E3A8A;
+      --blue:   #3B82F6;
+      --gray:   #F1F5F9;
+      --text:   #1E293B;
+      --muted:  #64748B;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .logo span { color: var(--blue); }
+
+    .hero {
+      text-align: center;
+      padding: 80px 24px 64px;
+      background: linear-gradient(160deg, #EFF6FF 0%, #fff 60%);
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.15;
+      max-width: 640px;
+      margin: 0 auto 16px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: #1e40af; }
+    .file-meta {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 64px 24px;
+    }
+    .section-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 40px;
+    }
+    .steps {
+      display: grid;
+      gap: 20px;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px;
+      background: var(--gray);
+      border-radius: 16px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .step p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid #E2E8F0;
+    }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 56px 20px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">Inspection<span>IQ</span></a>
+  </nav>
+
+  <section class="hero">
+    <h1>Try InspectionIQ with a sample report</h1>
+    <p>Don't have your inspection report handy? Download this sample home inspection PDF and see what InspectionIQ can do.</p>
+    <a class="download-btn" href="/sample-report.pdf" download>
+      Download Sample Report (PDF)
+    </a>
+    <p class="file-meta">PDF &middot; 5.7 MB</p>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <h2>How to use it on your iPhone</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Save the PDF to your phone</h3>
+            <p>Tap the download button above in Safari, then tap the Share button and choose <strong>Save to Files</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Open InspectionIQ and upload</h3>
+            <p>Tap <strong>Upload Report</strong> in the app and select the PDF you just saved from the Files browser.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Get your analysis</h3>
+            <p>The report is processed in under a minute. You'll see a risk score, cost estimates, and negotiation tips.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 TradeTech LLC &nbsp;&middot;&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/terms.html">Terms of Use</a></p>
+  </footer>
+
+</body>
+</html>
